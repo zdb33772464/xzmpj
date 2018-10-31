@@ -16,7 +16,9 @@ public class SysUser implements UserDetails{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(updatable = false,name = "username",nullable = false,length = 50)
 	private String username;
+	@Column(updatable = false,name = "password",nullable = false,length = 100)
 	private String password;
 	//@ManyToMany(cascade = {CascadeType.REFRESH},fetch = FetchType.EAGER)
 	@ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)

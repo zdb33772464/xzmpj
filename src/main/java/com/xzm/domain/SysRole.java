@@ -1,9 +1,6 @@
 package com.xzm.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class SysRole {
@@ -11,6 +8,7 @@ public class SysRole {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(updatable = false,name = "name",nullable = false,length = 50)
 	private String name;
 	public Long getId() {
 		return id;
